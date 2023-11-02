@@ -310,8 +310,10 @@ class OpsDroid:
 
                     continue
 
-                if hasattr(func, "skill"):
-                    self.register_skill(func, skill["config"])
+                # This loads the opsdroid module itself
+                # which later is iterated and that fails
+                #if hasattr(func, "skill"):
+                #    self.register_skill(func, skill["config"])
 
         with contextlib.suppress(AttributeError):
             for skill in skills:
